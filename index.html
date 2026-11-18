@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="canonical" href="https://savearizonanow.org/">
+<meta property="og:title" content="Save Arizona Now">
+<meta property="og:description" content="Free food, diapers, baby wipes and household items for Arizona neighbors in financial hardship.">
+<meta property="og:url" content="https://savearizonanow.org/">
+<title>Save Arizona Now</title>
+<meta name="description" content="Save Arizona Now is an all-volunteer 501(c)(3) nonprofit giving free food, diapers, baby wipes and household items to Arizona neighbors in financial hardship.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap">
+<style>
+*,*::before,*::after{box-sizing:border-box}body{margin:0}img{max-width:100%;height:auto}
+/* Layout: navy hero carrying the logo's sunrise, then plain white and cream bands in one centered column. Single light look by choice, to match the printed logo. */
+:root {
+  --navy:#16324A; --navy-deep:#0F2436; --copper:#D4572A; --copper-dark:#B4441D; --gold:#F4A62A; --cream:#FFF6E6; --paper:#FFFFFF;
+  --ink:#16324A; --ink-soft:#4A5E70; --line:#E8DCC8;
+  --display:"Poppins","Trebuchet MS",system-ui,sans-serif; --body:"Nunito Sans","Segoe UI",system-ui,sans-serif;
+  color-scheme: light;
+}
+html { scroll-behavior:smooth }
+body { background:var(--paper); color:var(--ink); font-family:var(--body); font-size:18px; line-height:1.6 }
+.inner { max-width:1040px; margin:0 auto; padding-left:max(20px, env(safe-area-inset-left, 0px)); padding-right:max(20px, env(safe-area-inset-right, 0px)) }
+h1,h2,h3 { font-family:var(--display); margin:0; text-wrap:balance; line-height:1.15 }
+h1 { font-size:clamp(2.1rem, 5.2vw, 3.5rem); font-weight:700 }
+h2 { font-size:clamp(1.6rem, 3.4vw, 2.25rem); font-weight:700 }
+h3 { font-size:1.2rem; font-weight:600 }
+p { margin:0; max-width:62ch }
+a { color:var(--copper-dark) }
+a:focus-visible, .btn:focus-visible { outline:3px solid var(--gold); outline-offset:3px }
+.eyebrow { font-family:var(--display); font-weight:600; font-size:.85rem; letter-spacing:.14em; text-transform:uppercase; color:var(--copper) }
+
+/* header */
+.top { background:var(--paper); border-bottom:1px solid var(--line) }
+.top .inner { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px 24px; padding-block:12px }
+.brand { display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--navy); font-family:var(--display); font-weight:700; font-size:1.15rem; letter-spacing:.02em }
+.brand svg { width:48px; height:48px; flex:none }
+.brand b { color:var(--copper); font-weight:700 }
+.nav { display:flex; flex-wrap:wrap; gap:6px 22px; font-family:var(--display); font-weight:500; font-size:.98rem }
+.nav a { color:var(--navy); text-decoration:none; padding-block:6px }
+.nav a:hover { color:var(--copper-dark); text-decoration:underline }
+
+/* hero */
+.hero { background:var(--navy); color:var(--cream); overflow:hidden }
+.hero .inner { display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr); gap:32px; align-items:end; padding-top:64px }
+.hero-text { display:flex; flex-direction:column; gap:20px; padding-bottom:64px; min-width:0 }
+.hero .eyebrow { color:var(--gold) }
+.hero p { font-size:1.2rem; color:#E6EDF3 }
+.actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:6px }
+.btn { display:inline-block; font-family:var(--display); font-weight:600; font-size:1.02rem; text-decoration:none; padding:13px 24px; border-radius:6px; border:2px solid transparent }
+.btn.primary { background:var(--copper); color:#fff }
+.btn.primary:hover { background:var(--copper-dark) }
+.btn.ghost { border-color:var(--cream); color:var(--cream) }
+.btn.ghost:hover { background:var(--cream); color:var(--navy) }
+.sun { position:relative; width:100%; max-width:440px; aspect-ratio:2/1; justify-self:center; border-radius:440px 440px 0 0; overflow:hidden;
+  background:repeating-conic-gradient(from -90deg at 50% 100%, var(--copper) 0 6.92deg, var(--gold) 6.92deg 13.84deg) }
+.sun::before { content:""; position:absolute; left:50%; bottom:0; width:46%; aspect-ratio:2/1; transform:translateX(-50%); background:var(--cream); border-radius:400px 400px 0 0 }
+.sun svg { position:absolute; left:50%; bottom:5%; width:15%; transform:translateX(-50%) }
+
+/* bands */
+.band { padding-block:72px }
+.band.cream { background:var(--cream) }
+.stack { display:flex; flex-direction:column; gap:28px }
+.head { display:flex; flex-direction:column; gap:10px }
+.lead { font-size:1.15rem; color:var(--ink-soft) }
+
+.gives { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:0; border-top:3px solid var(--navy) }
+.gives div { padding:22px 20px 22px 0; border-bottom:1px solid var(--line); display:flex; flex-direction:column; gap:6px; min-width:0 }
+.gives p { color:var(--ink-soft); font-size:1rem }
+
+.steps { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:28px; counter-reset:s }
+.steps li { counter-increment:s; display:flex; flex-direction:column; gap:8px; min-width:0 }
+.steps li::before { content:counter(s); font-family:var(--display); font-weight:700; font-size:1.1rem; width:42px; height:42px; border-radius:50%; background:var(--navy); color:var(--gold); display:flex; align-items:center; justify-content:center }
+.steps p { color:var(--ink-soft); font-size:1rem }
+
+.ways { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:20px }
+.way { background:var(--paper); border:1px solid var(--line); border-top:5px solid var(--copper); padding:24px; display:flex; flex-direction:column; gap:10px; min-width:0 }
+.way:nth-child(2) { border-top-color:var(--gold) }
+.way:nth-child(3) { border-top-color:var(--navy) }
+.way p { color:var(--ink-soft); font-size:1rem }
+
+.about { display:grid; grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr); gap:40px; align-items:center }
+.about .biglogo { width:100%; max-width:300px; height:auto; justify-self:center }
+.facts { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px }
+.facts li { padding-left:26px; position:relative }
+.facts li::before { content:""; position:absolute; left:0; top:.55em; width:12px; height:12px; border-radius:50%; background:var(--gold) }
+
+.contact { background:var(--navy); color:var(--cream) }
+.contact .lead { color:#E6EDF3 }
+.contact a { color:var(--gold) }
+.contact-box { border:2px solid var(--gold); border-radius:8px; padding:22px 24px; display:flex; flex-direction:column; gap:6px; max-width:520px }
+.contact-box strong { font-family:var(--display); font-size:1.25rem; overflow-wrap:anywhere }
+
+footer { background:var(--navy-deep); color:#C6D2DC; font-size:.92rem }
+footer .inner { padding-block:26px; display:flex; flex-wrap:wrap; gap:8px 28px; justify-content:space-between }
+
+@media (max-width:760px) {
+  .hero .inner { grid-template-columns:1fr; padding-top:44px }
+  .hero-text { padding-bottom:28px }
+  .about { grid-template-columns:1fr }
+  .band { padding-block:52px }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior:auto } }
+</style>
+
+</head>
+<body>
+<header class="top">
+  <div class="inner">
+    <a class="brand" href="#top"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="48" height="48" role="img" aria-label="Save Arizona Now logo"><symbol id="sanmark" viewBox="0 0 100 100">
+  <clipPath id="azc1"><path d="M16,4 L96,4 L96,96 L62,96 L5,66 L9,60 L7,52 L12,44 L10,33 L13,24 L12,14 L16,11 Z"/></clipPath>
+  <path d="M16,4 L96,4 L96,96 L62,96 L5,66 L9,60 L7,52 L12,44 L10,33 L13,24 L12,14 L16,11 Z" fill="#D4572A"/>
+  <g clip-path="url(#azc1)"><path d="M52,70 L-88.0,70.0 L-87.0,53.1 Z" fill="#F4A62A"/><path d="M52,70 L-83.9,36.5 L-78.9,20.4 Z" fill="#F4A62A"/><path d="M52,70 L-72.0,4.9 L-63.2,-9.5 Z" fill="#F4A62A"/><path d="M52,70 L-52.8,-22.8 L-40.8,-34.8 Z" fill="#F4A62A"/><path d="M52,70 L-27.5,-45.2 L-13.1,-54.0 Z" fill="#F4A62A"/><path d="M52,70 L2.4,-60.9 L18.5,-65.9 Z" fill="#F4A62A"/><path d="M52,70 L35.1,-69.0 L52.0,-70.0 Z" fill="#F4A62A"/><path d="M52,70 L68.9,-69.0 L85.5,-65.9 Z" fill="#F4A62A"/><path d="M52,70 L101.6,-60.9 L117.1,-54.0 Z" fill="#F4A62A"/><path d="M52,70 L131.5,-45.2 L144.8,-34.8 Z" fill="#F4A62A"/><path d="M52,70 L156.8,-22.8 L167.2,-9.5 Z" fill="#F4A62A"/><path d="M52,70 L176.0,4.9 L182.9,20.4 Z" fill="#F4A62A"/><path d="M52,70 L187.9,36.5 L191.0,53.1 Z" fill="#F4A62A"/>
+    <rect x="0" y="70" width="100" height="30" fill="#16324A"/>
+    <circle cx="52" cy="70" r="25" fill="#FFF6E6"/>
+    <rect x="0" y="70" width="100" height="30" fill="#16324A"/>
+  </g>
+  <path d="M16,4 L96,4 L96,96 L62,96 L5,66 L9,60 L7,52 L12,44 L10,33 L13,24 L12,14 L16,11 Z" fill="none" stroke="#16324A" stroke-width="3.2" stroke-linejoin="round"/>
+  <g transform="translate(52,53) scale(0.6)"><path d="M0,-6 C-4,-15 -18,-13 -18,-2 C-18,8 -6,15 0,22 C6,15 18,8 18,-2 C18,-13 4,-15 0,-6 Z" fill="#D4572A"/></g>
+</symbol><use href="#sanmark"/></svg><span>SAVE ARIZONA <b>NOW</b></span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="#what-we-give">What we give</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#get-involved">Get involved</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="inner">
+      <div class="hero-text">
+        <span class="eyebrow">Serving Our Community</span>
+        <h1>Free essentials for Arizona neighbors going through a hard time.</h1>
+        <p>Save Arizona Now gives away food, diapers, baby wipes and household items at free community giveaways across the Phoenix area. Everything is free, and everyone who helps is a volunteer.</p>
+        <div class="actions">
+          <a class="btn primary" href="#get-involved">Donate or volunteer</a>
+          <a class="btn ghost" href="#how-it-works">See how it works</a>
+        </div>
+      </div>
+      <div class="sun" role="img" aria-label="A sunrise with a heart at its center">
+        <svg viewBox="-20 -17 40 41" aria-hidden="true"><path d="M0,-6 C-4,-15 -18,-13 -18,-2 C-18,8 -6,15 0,22 C6,15 18,8 18,-2 C18,-13 4,-15 0,-6 Z" fill="#D4572A"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="what-we-give">
+    <div class="inner stack">
+      <div class="head">
+        <span class="eyebrow">What we give</span>
+        <h2>The basics a household runs out of first.</h2>
+        <p class="lead">When money is tight, these are the things families go without. We hand them out at no cost.</p>
+      </div>
+      <div class="gives">
+        <div><h3>Food</h3><p>Groceries and pantry items to help stretch a week's meals.</p></div>
+        <div><h3>Diapers</h3><p>Diapers for babies and toddlers, one of the biggest costs for young families.</p></div>
+        <div><h3>Baby wipes</h3><p>The everyday item that food assistance programs do not cover.</p></div>
+        <div><h3>Household items</h3><p>Donated goods for the home, passed along to someone who can use them.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band cream" id="how-it-works">
+    <div class="inner stack">
+      <div class="head">
+        <span class="eyebrow">How it works</span>
+        <h2>From a donated pallet to a neighbor's car.</h2>
+      </div>
+      <ol class="steps">
+        <li><h3>We collect</h3><p>Companies give us overstock they cannot sell, and people in the community donate items they no longer need.</p></li>
+        <li><h3>We store and sort</h3><p>Volunteers pick up the donations, sort them and keep them ready for the next giveaway.</p></li>
+        <li><h3>We give it away</h3><p>Each month we set up a free giveaway in a Phoenix-area city, hosted with a local business or church.</p></li>
+      </ol>
+      <p>Giveaway dates and locations are posted on this page as they are scheduled.</p>
+    </div>
+  </section>
+
+  <section class="band" id="get-involved">
+    <div class="inner stack">
+      <div class="head">
+        <span class="eyebrow">Get involved</span>
+        <h2>Three ways to help.</h2>
+        <p class="lead">We are new in Arizona and growing one giveaway at a time. Every pallet, parking lot and pair of hands matters.</p>
+      </div>
+      <div class="ways">
+        <div class="way"><h3>Donate goods or funds</h3><p>Businesses: send us your overstock, returns or short-dated product. Individuals: give household items in good condition, or a financial gift that buys diapers and food.</p></div>
+        <div class="way"><h3>Host a giveaway</h3><p>Churches and local businesses can lend a parking lot or hall for a morning. We bring the goods, the tables and the volunteers.</p></div>
+        <div class="way"><h3>Volunteer</h3><p>Help pick up donations, sort them, or hand them out on giveaway day. A couple of hours makes a real difference.</p></div>
+      </div>
+      <p>To do any of these, <a href="#contact">get in touch</a> and tell us how you would like to help.</p>
+    </div>
+  </section>
+
+  <section class="band cream" id="about">
+    <div class="inner about">
+      <div class="stack">
+        <div class="head">
+          <span class="eyebrow">About us</span>
+          <h2>Neighbors helping neighbors, with no one on the payroll.</h2>
+        </div>
+        <p>Save Arizona Now is an Arizona nonprofit that gives essentials to people in financial hardship. We held our first Arizona giveaway in the fall of 2026.</p>
+        <ul class="facts">
+          <li>A 501(c)(3) public charity. Donations are tax-deductible to the extent the law allows.</li>
+          <li>Run entirely by volunteers. No one is paid.</li>
+          <li>Everything we receive is given away free.</li>
+          <li>Based in the West Valley and serving cities across the Phoenix area.</li>
+        </ul>
+      </div>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="100 60 800 870" class="biglogo" role="img" aria-label="Save Arizona Now: Serving Our Community">
+<use href="#sanmark" x="270" y="70" width="460" height="460"/>
+<text x="500" y="690" text-anchor="middle" font-family="Poppins, Trebuchet MS, sans-serif" font-weight="700" font-size="104" letter-spacing="2" fill="#16324A">SAVE ARIZONA</text>
+<text x="500" y="810" text-anchor="middle" font-family="Poppins, Trebuchet MS, sans-serif" font-weight="700" font-size="120" letter-spacing="26" fill="#D4572A">NOW</text>
+<rect x="150" y="778" width="150" height="8" rx="4" fill="#F4A62A"/><rect x="700" y="778" width="150" height="8" rx="4" fill="#F4A62A"/>
+<text x="500" y="895" text-anchor="middle" font-family="Poppins, Trebuchet MS, sans-serif" font-weight="500" font-size="40" fill="#16324A">Serving Our Community</text>
+</svg>
+    </div>
+  </section>
+
+  <section class="band contact" id="contact">
+    <div class="inner stack">
+      <div class="head">
+        <span class="eyebrow" style="color:var(--gold)">Contact</span>
+        <h2>Have something to give, or need to reach us?</h2>
+        <p class="lead">Email us about donating goods or funds, hosting a giveaway, volunteering, or anything else.</p>
+      </div>
+      <div class="contact-box">
+        <span>Email</span>
+        <strong><a href="mailto:info@savearizonanow.org">info@savearizonanow.org</a></strong>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="inner">
+    <span>© 2026 Save Arizona Now. A 501(c)(3) nonprofit organization.</span>
+    <span>Serving Our Community</span>
+  </div>
+</footer>
+
+</body>
+</html>
